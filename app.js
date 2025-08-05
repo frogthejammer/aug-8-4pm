@@ -391,9 +391,15 @@ function render(datasets,labels,isCount){
   });
 }
 
-function renderLinePie(buckets,lineData,groupCounts,metricName){
-  const grid=document.getElementById('chartGrid');
-  grid.innerHTML=`
+function renderLinePie(buckets, lineData, groupCounts, metricName) {
+  const grid = document.getElementById('chartGrid');
+
+  //Remove loading message
+  const loading = document.getElementById('pieLoading');
+  if (loading) loading.remove();
+
+  //Render charts
+  grid.innerHTML = `
     <div class="chart-box" style="flex:1 1 100%;">
       <div class="chart-head">
         <div class="chart-title">${prettyName(metricName)}</div>
@@ -407,6 +413,9 @@ function renderLinePie(buckets,lineData,groupCounts,metricName){
       <div class="chart-number" id="sliceValue"></div>
       <canvas id="pieMain" height="140"></canvas>
     </div>`;
+    
+  // rest of your chart setup...
+
 
   const lineCtx=document.getElementById('lineMain').getContext('2d');
   const pieCtx=document.getElementById('pieMain').getContext('2d');
