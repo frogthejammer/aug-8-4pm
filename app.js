@@ -557,8 +557,6 @@ function escapeHtml(s){
     .replaceAll("'",'&#39;');
 }
 
-
-
 /* =========================================================
    EXTRA PANELS : two monthly-average charts (all years)
    ========================================================= */
@@ -663,7 +661,6 @@ function buildExtraCharts(){
     makeBigLine('fileMedianChart', 'fileMedianValue', 'fileMedianMonth', fileMedian, '#1976d2'),
     makeBigLine('sentMedianChart', 'sentMedianValue', 'sentMedianMonth', sentMedian, '#c2185b')
   );
-
 }
 
 
